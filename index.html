@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EX1 · Directorio de Usuarios</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Directorio de Usuarios</h1>
+    <p class="subtitle">Datos en vivo desde JSONPlaceholder</p>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <label for="filtro-nombre" class="filtro-label">Buscar por nombre</label>
+      <input
+        type="text"
+        id="filtro-nombre"
+        placeholder="Ej: Leanne, Ervin, Clementine..."
+        autocomplete="off"
+      />
+      <span id="contador-resultados" class="contador">Cargando usuarios…</span>
+    </section>
+
+    <section class="tabla-wrap">
+      <table id="tabla-usuarios">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Empresa</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-usuarios-body">
+          <!-- Filas generadas dinámicamente -->
+        </tbody>
+      </table>
+      <p id="sin-resultados" class="sin-resultados" hidden>
+        No hay usuarios que coincidan con la búsqueda.
+      </p>
+    </section>
+  </main>
+
+  <!-- Panel de detalle -->
+  <aside id="panel-detalle" class="panel-detalle" hidden>
+    <div class="panel-detalle-contenido">
+      <button id="cerrar-detalle" class="cerrar-btn" aria-label="Cerrar detalle">✕</button>
+      <h2 id="detalle-nombre"></h2>
+      <p id="detalle-username" class="detalle-username"></p>
+      <dl class="detalle-lista">
+        <dt>Teléfono</dt>
+        <dd id="detalle-telefono"></dd>
+        <dt>Dirección</dt>
+        <dd id="detalle-direccion"></dd>
+        <dt>Sitio web</dt>
+        <dd id="detalle-web"></dd>
+      </dl>
+    </div>
+  </aside>
+  <div id="overlay-detalle" class="overlay-detalle" hidden></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

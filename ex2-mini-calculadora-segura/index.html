@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EX2 · Mini Calculadora Segura</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Mini Calculadora Segura</h1>
+    <p class="subtitle">Suma, resta, multiplica y divide con validaciones</p>
+  </header>
+
+  <main class="container">
+    <section class="calculadora">
+      <form id="form-calculadora" novalidate>
+        <div class="campo">
+          <label for="num-a">Número A</label>
+          <input type="number" id="num-a" step="any" placeholder="0" />
+        </div>
+
+        <div class="campo campo-operacion">
+          <label for="operacion">Operación</label>
+          <select id="operacion">
+            <option value="+">+ Suma</option>
+            <option value="-">− Resta</option>
+            <option value="*">× Multiplicación</option>
+            <option value="/">÷ División</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="num-b">Número B</label>
+          <input type="number" id="num-b" step="any" placeholder="0" />
+        </div>
+
+        <button type="submit" class="btn-calcular">Calcular</button>
+      </form>
+
+      <div id="resultado-box" class="resultado-box" aria-live="polite">
+        <span class="resultado-label">Resultado</span>
+        <span id="resultado-valor" class="resultado-valor">—</span>
+      </div>
+      <p id="error-msg" class="error-msg" hidden></p>
+    </section>
+
+    <section class="historial-wrap">
+      <div class="historial-header">
+        <h2>Historial</h2>
+        <button id="limpiar-historial" class="btn-limpiar" type="button">Limpiar</button>
+      </div>
+      <ul id="lista-historial" class="lista-historial">
+        <li class="historial-vacio">Todavía no hay operaciones.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
